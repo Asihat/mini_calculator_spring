@@ -1,0 +1,34 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+
+<body>
+
+<h1>Mini calculator</h1>
+<input type="number" id="first">
+<input type="number" id="second">
+<button onclick="add(document.getElementById('first').value,document.getElementById('second').value)">Add</button>
+<button onclick="sub(document.getElementById('first').value,document.getElementById('second').value)">Sub</button>
+<button onclick="mul(document.getElementById('first').value,document.getElementById('second').value)">Mul</button>
+<button onclick="div(document.getElementById('first').value,document.getElementById('second').value)">Div</button>
+
+<p th:text="'Result: ' + ${result}"></p>
+
+<script>
+    function add(a, b) {
+      window.open(`http://localhost:8080/add?first=${a}&second=${b}`, "_self");
+    }
+    function sub(a, b) {
+      window.open(`http://localhost:8080/sub?first=${a}&second=${b}`, "_self");
+    }
+    function mul(a, b) {
+      window.open(`http://localhost:8080/mul?first=${a}&second=${b}`, "_self");
+    }
+    function div(a, b) {
+      window.open(`http://localhost:8080/div?first=${a}&second=${b}`, "_self");
+    }
+
+  </script>
+</body>
+</html>
